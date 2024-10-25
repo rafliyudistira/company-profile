@@ -51,19 +51,11 @@
                     <ul>
                         <li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}">About
                                 Company</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Dropdown 1</a></li>
-                                <li><a href="#">Deep Dropdown 2</a></li>
-                                <li><a href="#">Deep Dropdown 3</a></li>
-                                <li><a href="#">Deep Dropdown 4</a></li>
-                                <li><a href="#">Deep Dropdown 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Dropdown 2</a></li>
-                        <li><a href="#">Dropdown 3</a></li>
-                        <li><a href="#">Dropdown 4</a></li>
+                        
+                        <li><a href="{{ url('/visi') }}" class="{{ Request::is('visi') ? 'active' : '' }}">Visi Misi</a></li>
+                        <li><a href="{{ url('/policy') }}" class="{{ Request::is('policy') ? 'active' : '' }}">Our Policy</a></li>
+                        <li><a href="{{ url('/penghargaan') }}" class="{{ Request::is('penghargaan') ? 'active' : '' }}">Penghargaan & Sertifikat</a></li>
+                        <li><a href="{{ url('/izin') }}" class="{{ Request::is('izin') ? 'active' : '' }}">Izin Usaha</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"

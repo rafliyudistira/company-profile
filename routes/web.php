@@ -103,6 +103,21 @@ Route::prefix('news')->group(function () {
 Route::get('/tes', function () {
     return view('index');
 });
+Route::get('/visi', function () {
+    return view('layouts.visi');
+});
+
+Route::get('/policy', function () {
+    return view('layouts.policy');
+});
+
+Route::get('/penghargaan', function () {
+    return view('layouts.penghargaan');
+});
+
+Route::get('/izin', function () {
+    return view('layouts.izin');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

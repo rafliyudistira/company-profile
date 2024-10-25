@@ -469,7 +469,7 @@
                         </h2>
                         <p data-aos="fade-up" data-aos-delay="200">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang</p>
                         <div class="d-flex mt-3" data-aos="fade-up" data-aos-delay="300">
-                            <a href="{{ url('/company') }}" class="btn-get-started">Our Company</a>
+                            <a href="{{ url('/about') }}" class="btn-get-started">Our Company</a>
                             <a href="{{ url('/contact') }}" style="margin-left: 15px;" class="btn-get">Get in Touch</a>
                         </div>
                     </div>
@@ -486,7 +486,7 @@
                         </h2>
                         <p data-aos="fade-up" data-aos-delay="200">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang</p>
                         <div class="d-flex mt-3" data-aos="fade-up" data-aos-delay="300">
-                            <a href="{{ url('/company') }}" class="btn-get-started">Our Company</a>
+                            <a href="{{ url('/about') }}" class="btn-get-started">Our Company</a>
                             <a href="{{ url('/contact') }}" style="margin-left: 15px;" class="btn-get">Get in Touch</a>
                         </div>
                     </div>
