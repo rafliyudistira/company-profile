@@ -6,6 +6,67 @@
 * License: https://bootstrapmade.com/license/
 */
 
+$(document).ready(function() {
+    $('#example').DataTable();
+});
+
+$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+
+$(document).ready(function(){
+    $('.certificate').slick({
+        autoplay: true,
+        slidesToScroll: 1,
+        autoplaySpeed: 2000,
+        // infinite: true,
+        slidesToShow: 3,
+    });
+});
+
+$(document).ready(function(){
+    $('.slick-picture').slick({
+        autoplay: true,
+        slidesToScroll: 1,
+        autoplaySpeed: 2000,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slick-nav'
+    });
+
+    $('.slick-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slick-picture',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+      });
+});
+
+
 (function() {
   "use strict";
 

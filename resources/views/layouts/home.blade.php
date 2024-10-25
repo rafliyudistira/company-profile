@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', 'PT Yakin Makmur Teknik - Home')
 
 <style>
     .carousel {
@@ -14,10 +14,12 @@
     }
 
     .carousel-caption {
-        position: absolute;
+        position: relative;
         top: 50%;
         left: 5%;
-        transform: translateY(-50%);
+        /* Tetap menggunakan 5% untuk posisi awal */
+        transform: translate(-110px, -50%);
+        /* Menggeser ke kiri sebesar 110px */
         color: white !important;
         text-align: left;
         z-index: 10;
@@ -25,6 +27,16 @@
         flex-direction: column;
         align-items: flex-start;
     }
+
+    @media (max-width: 768px) {
+        .carousel-caption {
+            transform: translate(0, -50%);
+            /* Kembalikan posisi default di layar lebih kecil */
+            left: 5%;
+            /* Kembalikan ke posisi default */
+        }
+    }
+
 
     .carousel-caption h2 {
         font-size: 2.5rem;
@@ -72,10 +84,360 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.39);
         z-index: 5;
     }
+
+    .memberr {
+        position: relative;
+        width: 100%;
+        /* Lebar penuh kontainer */
+        height: 200px;
+        /* Tinggi tetap yang diinginkan */
+        display: flex;
+        /* Flexbox untuk memudahkan penempatan gambar */
+        align-items: center;
+        /* Posisikan konten (gambar) di tengah secara vertikal */
+        justify-content: center;
+        /* Posisikan konten (gambar) di tengah secara horizontal */
+        overflow: hidden;
+        /* Pastikan gambar yang melampaui area tidak terlihat */
+    }
+
+    .img-boxx {
+        width: 100%;
+        /* Otomatis menyesuaikan lebar */
+        height: 100%;
+        /* Gambar mengisi tinggi kontainer */
+        object-fit: cover;
+        object-position: center;
+    }
+
+
+    .btn-overlay {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        width: 80%;
+        transform: translate(-50%, -50%);
+        background-color: #3A526ADE;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-overlay:hover {
+        background-color: #3a526abc;
+        color: white;
+    }
+
+    @media (min-width: 1200px) {
+
+        /* 4 items per row on large screens */
+        .col-lg-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+
+        /* 3 items per row on medium screens */
+        .col-md-6 {
+            flex: 0 0 33.333%;
+            max-width: 33.333%;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+
+        /* 2 items per row on smaller screens */
+        .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+
+        /* 1 item per row on mobile screens */
+        .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .col-md-6 {
+            margin-bottom: 15px;
+            /* Atur margin bawah antara setiap gambar */
+        }
+    }
+
+    .wrapper {
+        max-width: 1100px;
+        width: 100%;
+        position: relative;
+    }
+
+    .wrapper i {
+        top: 50%;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        font-size: 1.25rem;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+        transform: translateY(-50%);
+        transition: transform 0.1s linear;
+    }
+
+    .wrapper i:active {
+        transform: translateY(-50%) scale(0.85);
+    }
+
+    .wrapper i:first-child {
+        left: -22px;
+    }
+
+    .wrapper i:last-child {
+        right: -22px;
+    }
+
+    .wrapper .carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3) - 12px);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        border-radius: 8px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel.no-transition {
+        scroll-behavior: auto;
+    }
+
+    .carousel.dragging {
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+    }
+
+    .carousel.dragging .card {
+        cursor: grab;
+        user-select: none;
+    }
+
+    .carousel :where(.card, .img) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel .card {
+        scroll-snap-align: start;
+        height: 342px;
+        list-style: none;
+        background: #fff;
+        cursor: pointer;
+        padding-bottom: 15px;
+        flex-direction: column;
+        border-radius: 8px;
+    }
+
+    .carousel .card .img {
+        background: #8B53FF;
+        height: 148px;
+        width: 148px;
+        border-radius: 50%;
+    }
+
+    .card .img img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #fff;
+    }
+
+    .carousel .card h2 {
+        font-weight: 500;
+        font-size: 1.56rem;
+        margin: 30px 0 5px;
+    }
+
+    .carousel .card span {
+        color: #6A6D78;
+        font-size: 1.31rem;
+    }
+
+    @media screen and (max-width: 900px) {
+        .wrapper .carousel {
+            grid-auto-columns: calc((100% / 2) - 9px);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .wrapper .carousel {
+            grid-auto-columns: 100%;
+        }
+    }
+
+
+    /* Slider */
+
+    .slick-slide {
+        margin: 0px 20px;
+    }
+
+    .slick-slide img {
+        width: 100%;
+    }
+
+    .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .slick-list {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slick-list:focus {
+        outline: none;
+    }
+
+    .slick-list.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+
+    .slick-slider .slick-track,
+    .slick-slider .slick-list {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .slick-track {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+
+    .slick-track:before,
+    .slick-track:after {
+        display: table;
+        content: '';
+    }
+
+    .slick-track:after {
+        clear: both;
+    }
+
+    .slick-loading .slick-track {
+        visibility: hidden;
+    }
+
+    .slick-slide {
+        display: none;
+        float: left;
+        height: 100%;
+        min-height: 1px;
+    }
+
+    [dir='rtl'] .slick-slide {
+        float: right;
+    }
+
+    .slick-slide img {
+        display: block;
+    }
+
+    .slick-slide.slick-loading img {
+        display: none;
+    }
+
+    .slick-slide.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized .slick-slide {
+        display: block;
+    }
+
+    .slick-loading .slick-slide {
+        visibility: hidden;
+    }
+
+    .slick-vertical .slick-slide {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+
+    .slick-arrow.slick-hidden {
+        display: none;
+    }
+
+    .certificate div img {
+        transition: 0.3s ease-in-out;
+    }
+
+    /* Hover effect default (tanpa klik) */
+    .certificate div img:hover {
+        transform: scale(1.1);
+        /* Zoom sedikit sebagai efek hover */
+        filter: brightness(50%) sepia(10%) hue-rotate(0deg);
+        /* Efek abu-abu gelap saat hover */
+        box-shadow: 0 4px 15px rgba(74, 74, 74, 0.3);
+        /* Shadow lebih gelap */
+    }
+
+    .certificate div::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(50, 50, 50, 0.6);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+    }
 </style>
+
+
 
 @section('content')
     <main class="main">
@@ -101,13 +463,14 @@
                 <!-- Slide Pertama -->
                 <div class="carousel-item active">
                     <div class="overlay"></div> <!-- Overlay Ditambahkan di sini -->
-                    <img class="d-block w-100" src="assets/img/hero-bg.jpg" alt="First slide">
+                    <img class="d-block w-100" src="{{ asset('assets/img/slider/1.jpg') }}" alt="First slide">
                     <div class="carousel-caption text-start">
-                        <h2 data-aos="fade-up" data-aos-delay="100">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang</h2>
-                        <p data-aos="fade-up" data-aos-delay="200">PT Yakin Makmur Teknik - EPC Storage Tank Company</p>
+                        <h2 data-aos="fade-up" data-aos-delay="100">PT Yakin Makmur Teknik - EPC Storage Tank Company
+                        </h2>
+                        <p data-aos="fade-up" data-aos-delay="200">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang</p>
                         <div class="d-flex mt-3" data-aos="fade-up" data-aos-delay="300">
-                            <a href="courses.html" class="btn-get-started">Our Company</a>
-                            <a href="courses.html" style="margin-left: 15px;" class="btn-get">Get in Touch</a>
+                            <a href="{{ url('/company') }}" class="btn-get-started">Our Company</a>
+                            <a href="{{ url('/contact') }}" style="margin-left: 15px;" class="btn-get">Get in Touch</a>
                         </div>
                     </div>
                 </div>
@@ -115,13 +478,16 @@
                 <!-- Slide Kedua -->
                 <div class="carousel-item">
                     <div class="overlay"></div> <!-- Overlay Ditambahkan di sini -->
-                    <img class="d-block w-100" src="assets/img/course-details.jpg" alt="Second slide">
+                    <img class="d-block w-100"
+                        src="{{ asset('assets/img/slider/2.jpeg') }}"
+                        alt="Second slide">
                     <div class="carousel-caption text-start">
-                        <h2 data-aos="fade-up" data-aos-delay="100">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang</h2>
-                        <p data-aos="fade-up" data-aos-delay="200">PT Yakin Makmur Teknik - EPC Storage Tank Company</p>
+                        <h2 data-aos="fade-up" data-aos-delay="100">PT Yakin Makmur Teknik - EPC Storage Tank Company
+                        </h2>
+                        <p data-aos="fade-up" data-aos-delay="200">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang</p>
                         <div class="d-flex mt-3" data-aos="fade-up" data-aos-delay="300">
-                            <a href="courses.html" class="btn-get-started">Our Company</a>
-                            <a href="courses.html" style="margin-left: 15px;" class="btn-get">Get in Touch</a>
+                            <a href="{{ url('/company') }}" class="btn-get-started">Our Company</a>
+                            <a href="{{ url('/contact') }}" style="margin-left: 15px;" class="btn-get">Get in Touch</a>
                         </div>
                     </div>
                 </div>
@@ -142,237 +508,94 @@
             </button> --}}
         </div>
 
-
-        <!-- About Section -->
-        <section id="about" class="about section">
-
+        <!-- Trainers Index Section -->
+        <section id="trainers-index" class="section trainers-index">
             <div class="container">
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Voluptatem dignissimos provident quasi corporis</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-                        <ul>
-                            <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate
-                                    velit.</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda
-                                    mastiro dolore eu fugiat nulla pariatur.</span></li>
-                        </ul>
-                        <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section><!-- /About Section -->
-
-        <!-- Counts Section -->
-        <section id="counts" class="section counts light-background">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Students</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Courses</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Events</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Trainers</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                </div>
-
-            </div>
-
-        </section><!-- /Counts Section -->
-
-        <!-- Why Us Section -->
-        <section id="why-us" class="section why-us">
-
-            <div class="container">
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="why-box">
-                            <h3>Why Choose Our Products?</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus
-                                optio ad corporis.
-                            </p>
-                            <div class="text-center">
-                                <a href="#" class="more-btn"><span>Learn More</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Why Box -->
-
-                    <div class="col-lg-8 d-flex align-items-stretch">
-                        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-
-                            <div class="col-xl-4">
-                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                                    <i class="bi bi-clipboard-data"></i>
-                                    <h4>Corporis voluptates officia eiusmod</h4>
-                                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
-                                    </p>
-                                </div>
-                            </div><!-- End Icon Box -->
-
-                            <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
-                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                                    <i class="bi bi-gem"></i>
-                                    <h4>Ullamco laboris ladore pan</h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                    </p>
-                                </div>
-                            </div><!-- End Icon Box -->
-
-                            <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
-                                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                                    <i class="bi bi-inboxes"></i>
-                                    <h4>Labore consequatur incidid dolore</h4>
-                                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                                </div>
-                            </div><!-- End Icon Box -->
-
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                        <div class="memberr position-relative">
+                            <img src="{{ asset('assets/img/asas-min.jpg') }}" class="img-fluid img-boxx" alt="">
+                            <a href="{{ url('/engineering') }}" class="btn-overlay"><b>ENGINEERING</b></a>
                         </div>
                     </div>
+                    <!-- End Team Member -->
 
+                    <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+                        <div class="memberr position-relative">
+                            <img src="{{ asset('assets/img/aaad-min.jpg') }}" class="img-fluid img-boxx" alt="">
+                            <a href="{{ url('/procurement') }}" class="btn-overlay"><b>PROCUREMENT</b></a>
+                        </div>
+                    </div>
+                    <!-- End Team Member -->
+
+                    <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                        <div class="memberr position-relative">
+                            <img src="{{ asset('assets/img/spherical-tank-min.jpg') }}" class="img-fluid img-boxx"
+                                alt="">
+                            <a href="{{ url('/construction') }}" class="btn-overlay"><b>CONSTRUCTION</b></a>
+                        </div>
+                    </div>
+                    <!-- End Team Member -->
+
+                    {{-- <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+                        <div class="memberr position-relative">
+                            <img src="{{ asset('assets/img/asssad-min.png') }}" class="img-fluid img-boxx" alt="">
+                            <a href="{{ url('/others') }}" class="btn-overlay"><b>OTHERS</b></a>
+                        </div>
+                    </div> --}}
+                    <!-- End Team Member -->
                 </div>
-
             </div>
-
-        </section><!-- /Why Us Section -->
+        </section>
+        <!-- /Trainers Index Section -->
 
         <!-- Features Section -->
-        <section id="features" class="features section">
+        <section id="features" class="features section light-background">
 
-            <div class="container">
+            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
 
                 <div class="row gy-4">
+                    <h2 data-aos="fade-up" data-aos-delay="100"><b>Our Experience</b></h2>
 
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="features-item">
-                            <i class="bi bi-eye" style="color: #ffbb2c;"></i>
-                            <h3><a href="" class="stretched-link">Lorem Ipsum</a></h3>
+                            <i class="bi bi-disc" style="color: #ffbb2c;"></i>
+                            <h3><a href="#" class="stretched-link">Atmospheric Tank</a></h3>
                         </div>
                     </div><!-- End Feature Item -->
 
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="features-item">
-                            <i class="bi bi-infinity" style="color: #5578ff;"></i>
-                            <h3><a href="" class="stretched-link">Dolor Sitema</a></h3>
+                            <i class="bi bi-database" style="color: #5578ff;"></i>
+                            <h3><a href="#" class="stretched-link">Double Wall Tank</a></h3>
                         </div>
                     </div><!-- End Feature Item -->
 
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="features-item">
-                            <i class="bi bi-mortarboard" style="color: #e80368;"></i>
-                            <h3><a href="" class="stretched-link">Sed perspiciatis</a></h3>
+                            <i class="bi bi-lightning" style="color: #e80368;"></i>
+                            <h3><a href="#" class="stretched-link">Electrical & Instrument</a></h3>
                         </div>
                     </div><!-- End Feature Item -->
 
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="400">
                         <div class="features-item">
                             <i class="bi bi-nut" style="color: #e361ff;"></i>
-                            <h3><a href="" class="stretched-link">Magni Dolores</a></h3>
+                            <h3><a href="#" class="stretched-link">Steel Structure</a></h3>
                         </div>
                     </div><!-- End Feature Item -->
 
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="500">
                         <div class="features-item">
-                            <i class="bi bi-shuffle" style="color: #47aeff;"></i>
-                            <h3><a href="" class="stretched-link">Nemo Enim</a></h3>
+                            <i class="bi bi-paint-bucket" style="color: #47aeff;"></i>
+                            <h3><a href="#" class="stretched-link">Sanblasting & Painting</a></h3>
                         </div>
                     </div><!-- End Feature Item -->
 
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="600">
                         <div class="features-item">
-                            <i class="bi bi-star" style="color: #ffa76e;"></i>
-                            <h3><a href="" class="stretched-link">Eiusmod Tempor</a></h3>
-                        </div>
-                    </div><!-- End Feature Item -->
-
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
-                        <div class="features-item">
-                            <i class="bi bi-x-diamond" style="color: #11dbcf;"></i>
-                            <h3><a href="" class="stretched-link">Midela Teren</a></h3>
-                        </div>
-                    </div><!-- End Feature Item -->
-
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
-                        <div class="features-item">
-                            <i class="bi bi-camera-video" style="color: #4233ff;"></i>
-                            <h3><a href="" class="stretched-link">Pira Neve</a></h3>
-                        </div>
-                    </div><!-- End Feature Item -->
-
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
-                        <div class="features-item">
-                            <i class="bi bi-command" style="color: #b2904f;"></i>
-                            <h3><a href="" class="stretched-link">Dirada Pack</a></h3>
-                        </div>
-                    </div><!-- End Feature Item -->
-
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
-                        <div class="features-item">
-                            <i class="bi bi-dribbble" style="color: #b20969;"></i>
-                            <h3><a href="" class="stretched-link">Moton Ideal</a></h3>
-                        </div>
-                    </div><!-- End Feature Item -->
-
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
-                        <div class="features-item">
-                            <i class="bi bi-activity" style="color: #ff5828;"></i>
-                            <h3><a href="" class="stretched-link">Verdo Park</a></h3>
-                        </div>
-                    </div><!-- End Feature Item -->
-
-                    <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
-                        <div class="features-item">
-                            <i class="bi bi-brightness-high" style="color: #29cc61;"></i>
-                            <h3><a href="" class="stretched-link">Flavor Nivelanda</a></h3>
+                            <i class="bi bi-tools" style="color: #ff7c6e;"></i>
+                            <h3><a href="#" class="stretched-link">Piping System</a></h3>
                         </div>
                     </div><!-- End Feature Item -->
 
@@ -382,171 +605,116 @@
 
         </section><!-- /Features Section -->
 
-        <!-- Courses Section -->
-        <section id="courses" class="courses section">
+        <!-- Features Section -->
+        <section id="features" class="features section light-background">
+            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+                <div class="row gy-4">
+                    <h2 data-aos="fade-up" data-aos-delay="100"><b>Our Certificate</b></h2>
 
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Courses</h2>
-                <p>Popular Courses</p>
-            </div><!-- End Section Title -->
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="course-item">
-                            <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
-                            <div class="course-content">
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <p class="category">Web Development</p>
-                                    <p class="price">$169</p>
-                                </div>
-
-                                <h3><a href="course-details.html">Website Design</a></h3>
-                                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id
-                                    facere quia quae dolores dolorem tempore.</p>
-                                <div class="trainer d-flex justify-content-between align-items-center">
-                                    <div class="trainer-profile d-flex align-items-center">
-                                        <img src="assets/img/trainers/trainer-1-2.jpg" class="img-fluid" alt="">
-                                        <a href="" class="trainer-link">Antonio</a>
-                                    </div>
-                                    <div class="trainer-rank d-flex align-items-center">
-                                        <i class="bi bi-person user-icon"></i>&nbsp;50
-                                        &nbsp;&nbsp;
-                                        <i class="bi bi-heart heart-icon"></i>&nbsp;65
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="certificate">
+                        <div>
+                            <a href="{{ url('/iso-9001-2015-ym-teknik') }}"><img id="hover-1"
+                                    src="{{ asset('assets/img/certificate/1.png') }}" class="img-fluid"
+                                    alt="" data-aos="fade-up" data-aos-delay="100"></a>
                         </div>
-                    </div> <!-- End Course Item-->
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="course-item">
-                            <img src="assets/img/course-2.jpg" class="img-fluid" alt="...">
-                            <div class="course-content">
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <p class="category">Marketing</p>
-                                    <p class="price">$250</p>
-                                </div>
-
-                                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id
-                                    facere quia quae dolores dolorem tempore.</p>
-                                <div class="trainer d-flex justify-content-between align-items-center">
-                                    <div class="trainer-profile d-flex align-items-center">
-                                        <img src="assets/img/trainers/trainer-2-2.jpg" class="img-fluid" alt="">
-                                        <a href="" class="trainer-link">Lana</a>
-                                    </div>
-                                    <div class="trainer-rank d-flex align-items-center">
-                                        <i class="bi bi-person user-icon"></i>&nbsp;35
-                                        &nbsp;&nbsp;
-                                        <i class="bi bi-heart heart-icon"></i>&nbsp;42
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <a href="{{ url('/iso-45001-2018-ym-teknik') }}"><img id="hover-2"
+                                    src="{{ asset('assets/img/certificate/2.png') }}" class="img-fluid"
+                                    alt="" data-aos="fade-up" data-aos-delay="200"></a>
                         </div>
-                    </div> <!-- End Course Item-->
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <div class="course-item">
-                            <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-                            <div class="course-content">
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <p class="category">Content</p>
-                                    <p class="price">$180</p>
-                                </div>
-
-                                <h3><a href="course-details.html">Copywriting</a></h3>
-                                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id
-                                    facere quia quae dolores dolorem tempore.</p>
-                                <div class="trainer d-flex justify-content-between align-items-center">
-                                    <div class="trainer-profile d-flex align-items-center">
-                                        <img src="assets/img/trainers/trainer-3-2.jpg" class="img-fluid" alt="">
-                                        <a href="" class="trainer-link">Brandon</a>
-                                    </div>
-                                    <div class="trainer-rank d-flex align-items-center">
-                                        <i class="bi bi-person user-icon"></i>&nbsp;20
-                                        &nbsp;&nbsp;
-                                        <i class="bi bi-heart heart-icon"></i>&nbsp;85
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <a href="{{ url('/iso-14001-2015-ym-teknik') }}"><img id="hover-3"
+                                    src="{{ asset('assets/img/certificate/3.png') }}" class="img-fluid"
+                                    alt="" data-aos="fade-up" data-aos-delay="300"></a>
                         </div>
-                    </div> <!-- End Course Item-->
+                        <div>
+                            <a href="{{ url('/iso-9001-2015-ym-teknik') }}"><img id="hover-1"
+                                    src="{{ asset('assets/img/certificate/1.png') }}" class="img-fluid"
+                                    alt="" data-aos="fade-up" data-aos-delay="100"></a>
+                        </div>
+                        <div>
+                            <a href="{{ url('/iso-45001-2018-ym-teknik') }}"><img id="hover-2"
+                                    src="{{ asset('assets/img/certificate/2.png') }}" class="img-fluid"
+                                    alt="" data-aos="fade-up" data-aos-delay="200"></a>
+                        </div>
+                        <div>
+                            <a href="{{ url('/iso-14001-2015-ym-teknik') }}"><img id="hover-3"
+                                    src="{{ asset('assets/img/certificate/3.png') }}" class="img-fluid"
+                                    alt="" data-aos="fade-up" data-aos-delay="300"></a>
+                        </div>
+                    </div>
 
                 </div>
-
             </div>
-
-        </section><!-- /Courses Section -->
+        </section>
+        <!-- /Features Section -->
 
         <!-- Trainers Index Section -->
-        <section id="trainers-index" class="section trainers-index">
+        {{-- <section id="trainers-index" class="section trainers-index">
 
             <div class="container">
 
-                <div class="row">
+                <h2 data-aos="fade-up" data-aos-delay="100"><b>Key of Success</b></h2>
+
+                <div class="row" style="margin-top: 40px;">
+
 
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member">
-                            <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                        <div class="member" style="padding-top: 50px;">
+                            <img src="{{ asset('assets/img/employee/mardiyono.png') }}" class="img-fluid"
+                                alt="">
                             <div class="member-content">
-                                <h4>Walter White</h4>
-                                <span>Web Development</span>
-                                <p>
-                                    Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis
-                                    quaerat qui aut aut aut
-                                </p>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+                                <h4>Ir. Mardiyono</h4>
+                                <h6>President Director</h6>
+                                <h6 style="text-align: justify; line-height: 1.5; margin-top: 15px;">
+                                    25 years of experience in EPCM company serving as Construction
+                                    Manager, Site Manager, Project Manager and Technical Derector in the
+                                    fields of Oil and Gas LNG Plant and Petrochemical Plant, Refinery and
+                                    power plant. Experience working in several Overseas Companies:<br>
+                                    • ICE Petroleum Sdn Bhs, Malaysia<br>
+                                    • Samsung Heavy Industri. Co. Ltd, Korea.<br>
+                                    • PT. Winteco Corporation, Korea<br>
+                                    • PT. Rutledge Singapore<br>
+                                    • Chicago Bridge & Iron. Co.Ltd, (Indonesia)
+                                </h6>
                             </div>
                         </div>
                     </div><!-- End Team Member -->
 
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member">
-                            <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
+                        <div class="member" style="padding-top: 50px;">
+                            <img src="{{ asset('assets/img/employee/indra.png') }}" class="img-fluid" alt="">
                             <div class="member-content">
-                                <h4>Sarah Jhinson</h4>
-                                <span>Marketing</span>
-                                <p>
-                                    Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum
-                                    rerum temporibus
-                                </p>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+                                <h4>Indra B Cahyono ST.</h4>
+                                <h6>Project Manager</h6>
+                                <h6 style="text-align: justify; line-height: 1.5; margin-top: 15px;">
+                                    15 years of experience in various projects as Drafting, Designing,
+                                    Estimating, Bid preparation, Planning, Scheduling, Project Control,
+                                    Project Management, Reporting, experience in the field of Engineering
+                                    and Construction for Spherical Tanks, Atmospheric Tanks, Double Wall
+                                    Tanks, Stell Structures, Pressure Vessels in Petrochemical Plant, Refinery
+                                    and Power Plant environments.<br>
+                                    and Power Plant environments.
+                                    Experience working in several Overseas Companies:<br>
+                                    • Samsung Heavy Industri. Co. Ltd, (Thailand).
+                                </h6>
                             </div>
                         </div>
                     </div><!-- End Team Member -->
 
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-                        <div class="member">
-                            <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
+                        <div class="member" style="padding-top: 50px;">
+                            <img src="{{ asset('assets/img/employee/yossi.png') }}" class="img-fluid" alt="">
                             <div class="member-content">
-                                <h4>William Anderson</h4>
-                                <span>Content</span>
-                                <p>
-                                    Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum
-                                    toro des clara
-                                </p>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+                                <h4>Yossi Yulfikar Y ST.</h4>
+                                <h6>Site Manager</h6>
+                                <h6 style="text-align: justify; line-height: 1.5; margin-top: 15px;">
+                                    10 years of experience in various projects as planning, scheduling,
+                                    project control, reporting, experience in the field of engineering and
+                                    construction as site manager for spherical tanks, atmospheric tanks,
+                                    double wall tanks, steel structures, pressure vessels in Petrochemical
+                                    Plant, Refinery and Power Plant environments.
+                                </h6>
                             </div>
                         </div>
                     </div><!-- End Team Member -->
@@ -555,7 +723,62 @@
 
             </div>
 
-        </section><!-- /Trainers Index Section -->
+        </section> --}}
+        <!-- /Trainers Index Section -->
+
+        <!-- Features Section -->
+        <section id="features" class="features section light-background mb-5">
+            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+                <div class="row gy-4">
+                    <h2 data-aos="fade-up" data-aos-delay="100"><b>Our Clients</b></h2>
+
+                    <div class="container">
+                        <section class="customer-logos slider">
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/pertamina2.png') }}">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/lote.png') }}">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/jade.png') }}"></div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/pertamina2.png') }}">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/lote.png') }}">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/jade.png') }}"></div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/pertamina2.png') }}">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/lote.png') }}">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="{{ asset('assets/img/clients/jade.png') }}"></div>
+                            {{-- <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg">
+                            </div>
+                            <div class="slide" data-aos="fade-up" data-aos-delay="100"><img
+                                    src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg">
+                            </div> --}}
+                        </section>
+
+                        <h2><a href="http://www.webcoderskull.com" target="_blank">http://www.webcoderskull.com</a></h2>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- /Features Section -->
 
     </main>
 @endsection
