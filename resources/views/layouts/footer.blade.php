@@ -1,14 +1,14 @@
 <style>
     a.pdf h4 {
-        color: #28a745 !important;
+        color: #00c0fe !important;
     }
 
     a.pdf:hover h4 {
-        color: #00d632 !important;
+        color: #5dd7ff !important;
     }
 
     a.pdf:active h4 {
-        color: #00d632 !important;
+        color: #5dd7ff !important;
     }
 
     .footer-contact p {
@@ -28,10 +28,10 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        border: 1px solid #00d632;
+        border: 1px solid #00c0fe;
         /* Warna lingkaran */
         font-size: 16px;
-        color: #00d632;
+        color: #00c0fe;
         /* Warna ikon */
         margin-right: 10px;
         transition: 0.3s;

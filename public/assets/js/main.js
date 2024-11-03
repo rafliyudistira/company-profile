@@ -7,6 +7,14 @@
 */
 
 $(document).ready(function() {
+    $('#calendar').evoCalendar({
+        theme: "Midnight Blue",
+        format: "mm/dd/yyyy"
+    });
+    $('#calendar').evoCalendar('toggleEventList', false);
+});
+
+$(document).ready(function() {
     $('#example').DataTable();
 });
 

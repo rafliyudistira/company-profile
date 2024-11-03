@@ -2,13 +2,13 @@
     .carousel-caption .btn-get-start {
         font-size: 1rem;
         padding: 10px 20px;
-        background-color: #28a745;
+        background-color: #00c0fe;
         color: white;
         border-radius: 5px;
     }
 
     .carousel-caption .btn-get-start:hover {
-        background-color: #008e21;
+        background-color: #67d9ff;
     }
 
     .header .carousel-caption .btn-get-start {
@@ -37,7 +37,7 @@
         <div class="d-flex align-items-center">
             <!-- Logo -->
             <a href="{{ url('/') }}" class="d-flex align-items-center">
-                <img src="{{ asset('assets/img/logo/logopt.png') }}" width="55" height="75" alt="">
+                <img src="{{ asset('assets/img/logo/logopt-1.png') }}" height="75" alt="">
             </a>
         </div>
 

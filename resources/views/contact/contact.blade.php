@@ -41,7 +41,7 @@
     }
 
     .btn:hover {
-        background-color: rgba(0, 126, 0, 0.712) !important;
+        background-color: #3bceff !important;
     }
 
     .form-control {
