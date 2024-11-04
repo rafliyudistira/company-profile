@@ -56,6 +56,7 @@
                         <li><a href="{{ url('/policy') }}" class="{{ Request::is('policy') ? 'active' : '' }}">Our Policy</a></li>
                         <li><a href="{{ url('/penghargaan') }}" class="{{ Request::is('penghargaan') ? 'active' : '' }}">Penghargaan & Sertifikat</a></li>
                         <li><a href="{{ url('/izin') }}" class="{{ Request::is('izin') ? 'active' : '' }}">Izin Usaha</a></li>
+                        <li><a href="{{ url('/key') }}" class="{{ Request::is('key') ? 'active' : '' }}">Key of Success</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"
@@ -79,7 +80,7 @@
                 <li><a href="{{ url('/clients') }}" class="{{ Request::is('clients') ? 'active' : '' }} me-4">CLIENTS</a></li>
                 {{-- <li><a href="{{ url('/') }}" class="me-4">KARIR</a></li> --}}
                 <li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }} me-4">CONTACT</a></li>
-                <li><a href="{{ url('/news') }}" class="{{ Request::is('news') ? 'active' : '' }} me-4">NEWS</a></li>
+                <!-- <li><a href="{{ url('/news') }}" class="{{ Request::is('news') ? 'active' : '' }} me-4">NEWS</a></li> -->
                 {{-- <li><a href="contact.html">LOREM</a></li>
                 <li><a href="contact.html">IPSUM</a></li> --}}
                 <a class="btn-getstarted" href="#">Get Started</a>

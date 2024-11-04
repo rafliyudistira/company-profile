@@ -123,22 +123,26 @@
 
             </div>
 
-        </section>
+        </section
 
         <section id="about-us" class="section about-us">
 
             <div class="container">
 
                 <div class="row gy-4">
-
+                    <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+                        <h6><b>Office</b></h6>
+                        <p>Ruko Dharmawangsa II, Jl. Grand Taruma No. 42 Blok B, Sukamakmur, Telukjambe Timur Karawang Barat, Kab. Karawang, 41316 Jawa Barat.</p>
+                    </div>
                     <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                         <h6><b>Workshop</b></h6>
-                        <p>Grand Taruma Darmawangsa Blok II.B No.42 – Karawang</p>
-                        <p><b>Telp:</b> 0267 - 8407445</p>
-                        <img id="hover-3" src="{{ asset('assets/img/barcode/1.png') }}" class="img-fluid" width="200"
-                            height="200" alt="" data-aos="fade-up" data-aos-delay="100">
+                        <p>Jl.Raya Kosambi-Telaga Sari No 56 Karawang</p>
                     </div>
-
+                    <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+                        <h6><b>Workshop</b></h6>
+                        <p>Curug-Kiari, Jawa Barat 41371, Karawang</p>
+                    </div>
+                    
                 </div>
 
             </div>
@@ -151,16 +155,26 @@
 
                 <div class="row gy-4">
 
-                    <div class="col-lg-12 order-1 order-lg-2 content" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-4 order-1 order-lg-2 content" data-aos="fade-up" data-aos-delay="200">
                         <h6 style="text-align: center"><b>Workshop</b></h6>
                         <div class="maps mt-3">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4477.645817709608!2d115.23745009432656!3d-8.728090450213415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2415371c6ab9b%3A0x7f49b9334ab8102b!2sUID%20Bali%20Campus!5e1!3m2!1sen!2sid!4v1728983757866!5m2!1sen!2sid"
-                                width="600" height="550" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3768.5753275054944!2d107.37847007499208!3d-6.426446893564582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjUnMzUuMiJTIDEwN8KwMjInNTEuOCJF!5e1!3m2!1sid!2sid!4v1730468188421!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
 
+                    <div class="col-lg-4 order-1 order-lg-2 content" data-aos="fade-up" data-aos-delay="200">
+                        <h6 style="text-align: center"><b>Workshop</b></h6>
+                        <div class="maps mt-3">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3769.123198643843!2d107.3749923749915!3d-6.3520663936378625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjEnMDcuNCJTIDEwN8KwMjInMzkuMiJF!5e1!3m2!1sid!2sid!4v1730514221701!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 order-1 order-lg-2 content" data-aos="fade-up" data-aos-delay="200">
+                        <h6 style="text-align: center"><b>Office</b></h6>
+                        <div class="maps mt-3">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3769.448944397781!2d107.27451637499104!3d-6.30742819368182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTgnMjYuNyJTIDEwN8KwMTYnMzcuNSJF!5e1!3m2!1sid!2sid!4v1730514335798!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
                 </div>
 
             </div>

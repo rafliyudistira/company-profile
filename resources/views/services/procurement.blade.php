@@ -68,7 +68,7 @@
                 <div class="row gy-4">
 
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/aaad-min.jpg') }}" class="img-fluid" alt="" width="500px" height="500px">
+                        <img src="{{ asset('assets/img/procurment.jpeg') }}" class="img-fluid" alt="" width="500px" height="500px">
                     </div>
 
                     <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">

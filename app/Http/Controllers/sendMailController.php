@@ -12,15 +12,17 @@ class sendMailController extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
         $subject = $request->input('subject');
-        $message = '(Name) ->' . ' ' . $request->input('name') . '  ' . '(E-Mail) ->' . '  ' . $request->input('email') . '  ' . ' (Message) -> ' . '  ' . $request->input('message');
+        $message = $request->input('message');
 
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         $data_mail = [
             'sender_name' => $name,
             'sender_email' => $email,
             'subject' => $subject,
             'message' => $message
         ];
-        Mail::to("afysaid@gmail.com")->send(new sendMail($data_mail));
+        Mail::to("info88714@gmail.com")->send(new sendMail($data_mail,$headers));
 
         return redirect()->to(url('/contact'))->with('success', 'Email has been sent successfully!');
     }

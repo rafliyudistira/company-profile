@@ -40,20 +40,29 @@
             <div class="col-lg-7 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
                 <h3>Visi:</h3>
                 <p align="justify">
-                    Menjadi Perusahaan yang memiliki keunggulan daya saing berkelanjutan dalam bidang usaha Perdagangan Barang dan Jasa.
+                    Menjadi mitra perusahaan yang handal dan terpercaya dalam pekerjaan Konstruksi dengan mengedepankan aspek keamanan, kualitas serta ketepatan waktu.
                 </p>
                 <h3>Misi:</h3>
                 <p align="justify">
-                    Melaksanakan kegiatan usaha dalam bidang Perdagangan Barang, Jasa Konstruksi, Mekanik dan Elektrik yang kompetitif berdasarkan 6 Komitmen Mutu:
+                    1. Penerapan Manajemen Proyek yang terintegrasi dengan wilayah operasi di indonesia.
                 </p>
-                <ul>
+                <p align="justify">
+                    2. Menciptakan hubungan kerja sama yang kuat dengan pelanggan & mitra kerja.<br>
+                </p>
+                <p align="justify">
+                    3. Menghasilkan produk berkualitas demi memberikan kepuasan pelanggan. Perusahaan Konstruksi yang terpercaya dan berkualitas tinggi dalam industri Konstruksi.<br>
+                </p>
+                <p  align="justify">
+                    4. Menyediakan Jasa dan Produk Konstruksi Bermutu Tinggi secara Profesional dan Berkesinambungan.
+                </p>
+                <!-- <ul>
                     <li><i class="bi bi-check-circle"></i> <span>Quality</span></li>
                     <li><i class="bi bi-check-circle"></i> <span>Cost</span></li>
                     <li><i class="bi bi-check-circle"></i> <span>Delivery</span></li>
                     <li><i class="bi bi-check-circle"></i> <span>Safety</span></li>
                     <li><i class="bi bi-check-circle"></i> <span>Environment</span></li>
                     <li><i class="bi bi-check-circle"></i> <span>Moral</span></li>
-                </ul>
+                </ul> -->
             </div>
 
         </div>

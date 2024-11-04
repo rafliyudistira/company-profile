@@ -80,10 +80,10 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ url('/pictures/electrical') }}">Electrical and Instrument</a></h5>
-                                {{-- <p class="fst-italic text-center">Sunday, September 26th at 7:00 pm</p> --}}
+                                <!-- {{-- <p class="fst-italic text-center">Sunday, September 26th at 7:00 pm</p> --}}
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut
                                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat</p> -->
                             </div>
                         </div>
                     </div>
@@ -94,10 +94,10 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ url('/pictures/atmospheric') }}">Atmospheric Tank</a></h5>
-                                {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
+                                <!-- {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
                                 <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                                    quasi architecto beatae vitae dicta sunt explicabo</p>
+                                    quasi architecto beatae vitae dicta sunt explicabo</p> -->
                             </div>
                         </div>
 
@@ -109,10 +109,10 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ url('/pictures/double') }}">Double Wall Tank</a></h5>
-                                {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
+                                <!-- {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
                                 <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                                    quasi architecto beatae vitae dicta sunt explicabo</p>
+                                    quasi architecto beatae vitae dicta sunt explicabo</p> -->
                             </div>
                         </div>
 
@@ -124,10 +124,10 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ url('/pictures/steel') }}">Steel Structure</a></h5>
-                                {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
+                                <!-- {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
                                 <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                                    quasi architecto beatae vitae dicta sunt explicabo</p>
+                                    quasi architecto beatae vitae dicta sunt explicabo</p> -->
                             </div>
                         </div>
 
@@ -139,10 +139,10 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ url('/pictures/sandlasting') }}">Sandlasting and Painting</a></h5>
-                                {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
+                                <!-- {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
                                 <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                                    quasi architecto beatae vitae dicta sunt explicabo</p>
+                                    quasi architecto beatae vitae dicta sunt explicabo</p> -->
                             </div>
                         </div>
 
@@ -154,10 +154,10 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ url('/pictures/piping') }}">Piping System</a></h5>
-                                {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
+                                <!-- {{-- <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p> --}}
                                 <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                                    quasi architecto beatae vitae dicta sunt explicabo</p>
+                                    quasi architecto beatae vitae dicta sunt explicabo</p> -->
                             </div>
                         </div>
 

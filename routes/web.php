@@ -12,6 +12,10 @@ Route::get('/about', function () {
     return view('layouts.about');
 });
 
+Route::get('/key', function () {
+    return view('layouts.key');
+});
+
 Route::get('/engineering', function () {
     return view('services.engineering');
 });

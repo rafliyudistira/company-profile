@@ -137,7 +137,7 @@
             <!-- You can delete the links only if you've purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-            Developer by <a href="#">RR Technology</a>
+            <!-- Developer by <a href="#">RR Technology</a> -->
         </div>
     </div>
 

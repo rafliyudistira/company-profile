@@ -568,7 +568,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="memberr position-relative">
-                            <img src="{{ asset('assets/img/asas-min.jpg') }}" class="img-fluid img-boxx" alt="">
+                            <img src="{{ asset('assets/img/engineering.jpeg') }}" class="img-fluid img-boxx" alt="">
                             <a href="{{ url('/engineering') }}" class="btn-overlay"><b>ENGINEERING</b></a>
                         </div>
                     </div>
@@ -576,7 +576,7 @@
 
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
                         <div class="memberr position-relative">
-                            <img src="{{ asset('assets/img/aaad-min.jpg') }}" class="img-fluid img-boxx" alt="">
+                            <img src="{{ asset('assets/img/procurment.jpeg') }}" class="img-fluid img-boxx" alt="">
                             <a href="{{ url('/procurement') }}" class="btn-overlay"><b>PROCUREMENT</b></a>
                         </div>
                     </div>
@@ -584,7 +584,7 @@
 
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
                         <div class="memberr position-relative">
-                            <img src="{{ asset('assets/img/spherical-tank-min.jpg') }}" class="img-fluid img-boxx"
+                            <img src="{{ asset('assets/img/kontruksi.jpeg') }}" class="img-fluid img-boxx"
                                 alt="">
                             <a href="{{ url('/construction') }}" class="btn-overlay"><b>CONSTRUCTION</b></a>
                         </div>
