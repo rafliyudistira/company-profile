@@ -20,8 +20,8 @@ class sendMailController extends Controller
             'subject' => $subject,
             'message' => $message
         ];
-        Mail::to("info88714@gmail.com")->send(new sendMail($data_mail));
+        Mail::to("afysaid@gmail.com")->send(new sendMail($data_mail));
 
-        return view('contact.contact')->with('success', 'Email has been sent successfully!');
+        return redirect()->to(url('/contact'))->with('success', 'Email has been sent successfully!');
     }
 }
