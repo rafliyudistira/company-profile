@@ -53,7 +53,7 @@
     .carousel-caption .btn-get-started {
         font-size: 1rem;
         padding: 10px 20px;
-        background-color: #28a745;
+        background-color: #00c0fe;
         color: white;
         text-decoration: none;
         border-radius: 5px;
@@ -75,7 +75,7 @@
     }
 
     .carousel-caption .btn-get:hover {
-        background-color: #28a745;
+        background-color: #00c0fe;
     }
 
     .carousel-item .overlay {
@@ -92,7 +92,7 @@
         position: relative;
         width: 100%;
         /* Lebar penuh kontainer */
-        height: 200px;
+        height: 185px;
         /* Tinggi tetap yang diinginkan */
         display: flex;
         /* Flexbox untuk memudahkan penempatan gambar */
@@ -435,6 +435,31 @@
         transition: opacity 0.3s ease-in-out;
         pointer-events: none;
     }
+
+    /* .evo-calendar {
+        background-color: #ff0000 !important;
+    } */
+
+    .evo-calendar .calendar-sidebar {
+        background-color: #00c0fe !important;
+    }
+
+    #calendar .evo-calendar .calendar-header h1 {
+        color: #00c0fe !important;
+    }
+
+
+    /* .evo-calendar .calendar-header {
+        background-color: #00ff7b !important;
+    }
+
+    .evo-calendar .calendar-body {
+        background-color: #ffae00 !important;
+    }
+
+    .evo-calendar .event-container {
+        background-color: #ff04bc !important;
+    } */
 </style>
 
 
@@ -467,7 +492,8 @@
                     <div class="carousel-caption text-start">
                         <h2 data-aos="fade-up" data-aos-delay="100">PT Yakin Makmur Teknik - EPC Storage Tank Company
                         </h2>
-                        <p data-aos="fade-up" data-aos-delay="200">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang</p>
+                        <p data-aos="fade-up" data-aos-delay="200">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang
+                        </p>
                         <div class="d-flex mt-3" data-aos="fade-up" data-aos-delay="300">
                             <a href="{{ url('/about') }}" class="btn-get-started">Our Company</a>
                             <a href="{{ url('/contact') }}" style="margin-left: 15px;" class="btn-get">Get in Touch</a>
@@ -478,13 +504,12 @@
                 <!-- Slide Kedua -->
                 <div class="carousel-item">
                     <div class="overlay"></div> <!-- Overlay Ditambahkan di sini -->
-                    <img class="d-block w-100"
-                        src="{{ asset('assets/img/slider/2.jpeg') }}"
-                        alt="Second slide">
+                    <img class="d-block w-100" src="{{ asset('assets/img/slider/2.jpeg') }}" alt="Second slide">
                     <div class="carousel-caption text-start">
                         <h2 data-aos="fade-up" data-aos-delay="100">PT Yakin Makmur Teknik - EPC Storage Tank Company
                         </h2>
-                        <p data-aos="fade-up" data-aos-delay="200">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang</p>
+                        <p data-aos="fade-up" data-aos-delay="200">Grand Taruma Darmawangsa Blok <br> II.B No.42 – Karawang
+                        </p>
                         <div class="d-flex mt-3" data-aos="fade-up" data-aos-delay="300">
                             <a href="{{ url('/about') }}" class="btn-get-started">Our Company</a>
                             <a href="{{ url('/contact') }}" style="margin-left: 15px;" class="btn-get">Get in Touch</a>
@@ -513,6 +538,35 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                        <div class="column">
+                            <div class="memberr position-relative">
+                                <img src="{{ asset('assets/img/engineering.jpeg') }}" class="img-fluid img-boxx" alt="">
+                                <a href="{{ url('/engineering') }}" class="btn-overlay"><b>ENGINEERING</b></a>
+                            </div>
+                            <div class="memberr position-relative mt-2">
+                                <img src="{{ asset('assets/img/procurment.jpeg') }}" class="img-fluid img-boxx" alt="">
+                                <a href="{{ url('/procurement') }}" class="btn-overlay"><b>PROCUREMENT</b></a>
+                            </div>
+                            <div class="memberr position-relative mt-2">
+                                <img src="{{ asset('assets/img/kontruksi.jpeg') }}" class="img-fluid img-boxx"
+                                    alt="">
+                                <a href="{{ url('/construction') }}" class="btn-overlay"><b>CONSTRUCTION</b></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 d-flex" data-aos="fade-up" data-aos-delay="300">
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Trainers Index Section -->
+
+        <!-- Trainers Index Section -->
+        {{-- <section id="trainers-index" class="section trainers-index">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="memberr position-relative">
                             <img src="{{ asset('assets/img/asas-min.jpg') }}" class="img-fluid img-boxx" alt="">
                             <a href="{{ url('/engineering') }}" class="btn-overlay"><b>ENGINEERING</b></a>
@@ -536,17 +590,9 @@
                         </div>
                     </div>
                     <!-- End Team Member -->
-
-                    {{-- <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-                        <div class="memberr position-relative">
-                            <img src="{{ asset('assets/img/asssad-min.png') }}" class="img-fluid img-boxx" alt="">
-                            <a href="{{ url('/others') }}" class="btn-overlay"><b>OTHERS</b></a>
-                        </div>
-                    </div> --}}
-                    <!-- End Team Member -->
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- /Trainers Index Section -->
 
         <!-- Features Section -->
@@ -606,7 +652,7 @@
         </section><!-- /Features Section -->
 
         <!-- Features Section -->
-        <section id="features" class="features section light-background">
+        <section id="features" class="features section ">
             <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
                 <div class="row gy-4">
                     <h2 data-aos="fade-up" data-aos-delay="100"><b>Our Certificate</b></h2>
@@ -614,33 +660,33 @@
                     <div class="certificate">
                         <div>
                             <a href="{{ url('/iso-9001-2015-ym-teknik') }}"><img id="hover-1"
-                                    src="{{ asset('assets/img/certificate/1.png') }}" class="img-fluid"
-                                    alt="" data-aos="fade-up" data-aos-delay="100"></a>
+                                    src="{{ asset('assets/img/certificate/1.png') }}" class="img-fluid" alt=""
+                                    data-aos="fade-up" data-aos-delay="100"></a>
                         </div>
                         <div>
                             <a href="{{ url('/iso-45001-2018-ym-teknik') }}"><img id="hover-2"
-                                    src="{{ asset('assets/img/certificate/2.png') }}" class="img-fluid"
-                                    alt="" data-aos="fade-up" data-aos-delay="200"></a>
+                                    src="{{ asset('assets/img/certificate/2.png') }}" class="img-fluid" alt=""
+                                    data-aos="fade-up" data-aos-delay="200"></a>
                         </div>
                         <div>
                             <a href="{{ url('/iso-14001-2015-ym-teknik') }}"><img id="hover-3"
-                                    src="{{ asset('assets/img/certificate/3.png') }}" class="img-fluid"
-                                    alt="" data-aos="fade-up" data-aos-delay="300"></a>
+                                    src="{{ asset('assets/img/certificate/3.png') }}" class="img-fluid" alt=""
+                                    data-aos="fade-up" data-aos-delay="300"></a>
                         </div>
                         <div>
                             <a href="{{ url('/iso-9001-2015-ym-teknik') }}"><img id="hover-1"
-                                    src="{{ asset('assets/img/certificate/1.png') }}" class="img-fluid"
-                                    alt="" data-aos="fade-up" data-aos-delay="100"></a>
+                                    src="{{ asset('assets/img/certificate/1.png') }}" class="img-fluid" alt=""
+                                    data-aos="fade-up" data-aos-delay="100"></a>
                         </div>
                         <div>
                             <a href="{{ url('/iso-45001-2018-ym-teknik') }}"><img id="hover-2"
-                                    src="{{ asset('assets/img/certificate/2.png') }}" class="img-fluid"
-                                    alt="" data-aos="fade-up" data-aos-delay="200"></a>
+                                    src="{{ asset('assets/img/certificate/2.png') }}" class="img-fluid" alt=""
+                                    data-aos="fade-up" data-aos-delay="200"></a>
                         </div>
                         <div>
                             <a href="{{ url('/iso-14001-2015-ym-teknik') }}"><img id="hover-3"
-                                    src="{{ asset('assets/img/certificate/3.png') }}" class="img-fluid"
-                                    alt="" data-aos="fade-up" data-aos-delay="300"></a>
+                                    src="{{ asset('assets/img/certificate/3.png') }}" class="img-fluid" alt=""
+                                    data-aos="fade-up" data-aos-delay="300"></a>
                         </div>
                     </div>
 

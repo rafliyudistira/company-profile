@@ -29,19 +29,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick-theme.css') }}" />
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet"> --}}
+
+    <!-- Evo Calendar CSS -->
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evo-calendar@1.0.0/dist/css/evo-calendar.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evo-calendar@1.0.0/dist/css/evo-calendar.royal-navy.min.css"> --}}
+    <!-- Add the evo-calendar.css for styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.2/evo-calendar/css/evo-calendar.min.css" />
 
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Mentor
-  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 
     <style>
         /* Preloader styling */
@@ -64,7 +61,7 @@
             display: grid;
             border: 4px solid #0000;
             border-radius: 50%;
-            border-color: #5fcf80 #0000;
+            border-color: #00c0fe #0000;
             animation: spinner-e04l1k 1.4s infinite linear;
         }
 
@@ -78,7 +75,7 @@
         }
 
         .spinner::before {
-            border-color: #5fcf80 #0000;
+            border-color: #00c0fe #0000;
             animation: inherit;
             animation-duration: 0.7s;
             animation-direction: reverse;
@@ -94,8 +91,6 @@
             }
         }
     </style>
-
-
 </head>
 
 <body class="index-page">
@@ -132,6 +127,10 @@
 
     <!-- Slick Carousel JS -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Evo Calendar JS -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/evo-calendar@1.0.0/dist/js/evo-calendar.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.2/evo-calendar/js/evo-calendar.min.js"></script>
 
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>

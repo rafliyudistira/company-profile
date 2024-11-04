@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\sendMailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -84,6 +85,9 @@ Route::get('/iso-14001-2015-ym-teknik', function () {
 Route::get('/contact', function () {
     return view('contact.contact');
 });
+
+Route::get('/mail', [sendMailController::class, 'index']);
+Route::post('/send-mail', [sendMailController::class, 'index']);
 
 // Route::get('/news', function () {
 //     return view('news.news');
