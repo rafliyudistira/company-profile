@@ -34,7 +34,8 @@
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evo-calendar@1.0.0/dist/css/evo-calendar.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evo-calendar@1.0.0/dist/css/evo-calendar.royal-navy.min.css"> --}}
     <!-- Add the evo-calendar.css for styling -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.2/evo-calendar/css/evo-calendar.min.css"/>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.2/evo-calendar/css/evo-calendar.min.css" />
 
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">

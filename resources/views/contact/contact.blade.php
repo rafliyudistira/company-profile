@@ -80,28 +80,46 @@
 
                 <div class="row gy-4">
 
-                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                        <form>
-                            <div class="mb-3">
-                                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Name">
+                    @if (isset($success))
+                        <div class="col-lg-12 mt-4">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ $success }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
                             </div>
-                            <div class="mb-3 mt-4">
-                                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1"
-                                    placeholder="Email">
-                            </div>
-                            <div class="mb-3 mt-4">
-                                <input type="subject" class="form-control form-control-lg" id="exampleInputPassword1"
-                                    placeholder="Subject">
-                            </div>
-                            <button type="submit" class="btn mt-3"><b>SEND MESSAGE</b></button>
-                        </form>
-                    </div>
-
-                    <div class="col-lg-6 order-1 order-lg-2 content" data-aos="fade-up" data-aos-delay="200">
-                        <div class="form-group">
-                            <textarea class="form-control area" rows="5" id="comment" placeholder="Message"></textarea>
                         </div>
+                    @endif
+
+                    <div class="col-lg-12 order-2 order-lg-1 mt-4" data-aos="fade-up" data-aos-delay="100">
+                        <form id="form" role="form" action="{{ url('/send-mail') }}" method="post"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <input type="text" name="name" class="form-control form-control-lg"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name"
+                                            required>
+                                    </div>
+                                    <div class="mb-3 mt-4">
+                                        <input type="text" name="email" class="form-control form-control-lg"
+                                            id="exampleInputPassword1" placeholder="Email" required>
+                                    </div>
+                                    <div class="mb-3 mt-4">
+                                        <input type="text" name="subject" class="form-control form-control-lg"
+                                            id="exampleInputPassword1" placeholder="Subject" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <textarea class="form-control area" name="message" rows="5" id="comment" placeholder="Message" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn mt-3"><b>SEND MESSAGE</b></button>
+                            </div>
+                        </form>
                     </div>
 
                 </div>
